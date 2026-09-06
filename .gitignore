@@ -1,0 +1,36 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+htmlcov/
+coverage.xml
+*.log
+.DS_Store
+
+# Generated scientific artefacts are reproducible from code + seed.
+# Keep directory placeholders; ignore contents except .gitkeep.
+data/datasets/**
+!data/datasets/.gitkeep
+data/validation/**
+!data/validation/.gitkeep
+data/experiments/**
+!data/experiments/.gitkeep
+data/app/**
+!data/app/.gitkeep
+
+# Frontend runtime/build debris (also listed in frontend/.gitignore).
+frontend/node_modules/
+frontend/dist/
+frontend/test-results/
+frontend/playwright-report/
+frontend/blob-report/
+frontend/.vite/
+frontend/coverage/

@@ -1,0 +1,54 @@
+# Paper A — Phase 2 surrogate and extrapolation research configuration.
+# Phase 1 scientific.yaml remains the frozen FEM/dataset source of truth.
+
+phase2_version: "paper-a.phase2.v1"
+software_version: "0.2.0"
+paper: "Paper A — Structural Surrogate Extrapolation Profiling"
+phase: 2
+
+relative_error_epsilon: 1.0e-12
+
+surrogate:
+  hidden_units: [128, 128, 128]
+  activation: "relu"
+  loss: "mse"
+  optimizer: "adam"
+  learning_rate: 0.001
+  batch_size: 128
+  max_epochs: 300
+  early_stopping_patience: 25
+  input_normalization: "zscore"
+  output_scaling: "zscore"
+  seeds: [20260905, 20260906, 20260907, 20260908, 20260909]
+  model_selection_rule: "retain_all_five_seeds"
+  ranking_rule: "lowest_validation_mse_only"
+
+interpolation_gate:
+  min_r2: 0.90
+  max_median_relative_error_pct: 10.0
+  max_catastrophic_relative_error_pct: 100.0
+  require_finite: true
+  all_seeds_must_pass: true
+
+anchors:
+  count: 100
+  source_split: "interpolation_test"
+  selection_method: "pcg64_without_replacement"
+  selection_seed: 20260905
+
+extrapolation:
+  variables: [A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, E, F]
+  directions: [lower, upper]
+  deltas: [0.00, 0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50]
+  threshold_pct: [5.0, 10.0]
+
+combined:
+  variables: [A3, F]
+  deltas_a3: [0.00, 0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50]
+  deltas_f: [0.00, 0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50]
+  directions_a3: [lower, upper]
+  directions_f: [lower, upper]
+
+performance:
+  mlp_batch_size: 1024
+  fem_cache: true

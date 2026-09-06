@@ -1,0 +1,39 @@
+:root {
+  --bg: #f3efe6;
+  --bg-deep: #e7e1d4;
+  --ink: #1d1a16;
+  --ink-soft: #4a453c;
+  --line: #c9c1b2;
+  --paper: #fbf8f1;
+  --paper-2: #f4efe4;
+  --steel: #2f4454;
+  --bronze: #8a4b2a;
+  --interp: #2c5b4e;
+  --extrap: #8a4b2a;
+  --lower: #1e4d7b;
+  --upper: #9a3412;
+  --ok: #215c3a;
+  --warn: #7a5410;
+  --bad: #8b1e1e;
+  --focus: #1e4d7b;
+  --shadow: 0 1px 0 rgba(29, 26, 22, 0.06), 0 8px 24px rgba(29, 26, 22, 0.05);
+  --radius: 10px;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --font: "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", "SFMono-Regular", ui-monospace, monospace;
+  --sans: "Source Sans 3", "Segoe UI", sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

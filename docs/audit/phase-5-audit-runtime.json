@@ -1,0 +1,57 @@
+{
+  "claims": {
+    "asymmetric_threshold_rows_seed_20260905": 9,
+    "combined_upper_sigma_max_median_a3_f_0_50": 3.0732392233106967,
+    "combined_upper_sigma_max_median_isolated_a3_0_50": 0.9260951124949569,
+    "response_dependence_supported": true,
+    "response_medians_at_delta_0_50_seed_20260905": {
+      "C": 1.2374723930643272,
+      "sigma_max": 0.6980176637023549,
+      "u_max": 0.7720962462457293
+    },
+    "variable_dependence_supported": true,
+    "variable_medians_at_delta_0_50_seed_20260905": {
+      "A1": 3.631219160364816,
+      "A10": 0.6975656811782804,
+      "A2": 0.6323125371462344,
+      "A3": 4.2791001376029545,
+      "A4": 0.8624363499548624,
+      "A5": 0.6002463729721617,
+      "A6": 0.8462638931501371,
+      "A7": 1.040229326535819,
+      "A8": 1.0254400441334384,
+      "A9": 0.9090316082463425,
+      "E": 1.0323173850509606,
+      "F": 98.89697638189956
+    }
+  },
+  "counts": {
+    "asymmetry": 1980,
+    "combined": 242000,
+    "profiles": 3960,
+    "thresholds": 180,
+    "variable_wise": 132000
+  },
+  "dataset_hash": "a78de261b1686363ed6d830cd370b763800da657bce0991047fe43fb9504e99e",
+  "experiment_id": "paper-a.phase2.v1",
+  "findings": [],
+  "git_commit": null,
+  "interpolation_gate": {
+    "all_passed": true,
+    "seeds": [
+      20260905,
+      20260906,
+      20260907,
+      20260908,
+      20260909
+    ]
+  },
+  "manifest_configuration_hash": "a6052f26a82850d96b485bbff88f434af5d68e76b0bd63dcfcf5510839b163f1",
+  "normalization_hash": "ff0c27f6faf4f812e49f8e165cb4584cd310d47b83c743c35280d75a97360327",
+  "notes": [],
+  "passed": true,
+  "units": {
+    "gpa_to_n_per_mm2": 1000.0,
+    "kn_to_n": 1000.0
+  }
+}

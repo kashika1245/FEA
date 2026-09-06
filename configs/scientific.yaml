@@ -1,0 +1,43 @@
+# Paper A — frozen Phase 1 scientific configuration
+# Values here must match docs/research/paper-a-specification.md.
+
+software_version: "0.1.0"
+geometry_version: "tenbar.cantilever.v1"
+solver_version: "planar-truss-direct-stiffness.v1"
+dataset_version: "paper-a.phase1.v1"
+
+parameter_domain:
+  area_mm2:
+    min: 50.0
+    max: 100.0
+  youngs_modulus_gpa:
+    min: 180.0
+    max: 220.0
+  load_kn:
+    min: 1.0
+    max: 10.0
+
+dataset:
+  n_samples: 10000
+  train_fraction: 0.70
+  validation_fraction: 0.15
+  interpolation_test_fraction: 0.15
+  random_seed: 20260905
+
+solver:
+  max_condition_number: 1.0e12
+  tolerances:
+    symmetry_atol: 1.0e-12
+    symmetry_rtol: 1.0e-14
+    equilibrium_rtol: 1.0e-8
+    equilibrium_force_rtol: 1.0e-8
+    equilibrium_moment_rtol: 1.0e-8
+    scaling_rtol: 1.0e-8
+    reference_rtol: 1.0e-8
+    reference_atol: 1.0e-10
+    min_length_mm: 1.0e-9
+    length_reference_mm: 9144.0
+
+reproducibility:
+  bit_generator: "PCG64"
+  hash_algorithm: "sha256"
